@@ -27,9 +27,16 @@
         public static int AskForNumber(string text)
         {
             Console.Write(text);
-            string userInput = Console.ReadLine(); // Needs work -> try/catch + loop or Int.TryParse + loop
-            int number = Convert.ToInt32(userInput);
-            return number;
+            while(true)
+            {try {string? userInput = Console.ReadLine(); 
+             int number = Convert.ToInt32(userInput);
+             return number;
+            }
+            catch(Exception e){
+                Console.WriteLine("The Error is",e);
+                Console.WriteLine("Seems there is some error, please enter a number again!");
+            }}
+           
         }
 
         /// <summary>
