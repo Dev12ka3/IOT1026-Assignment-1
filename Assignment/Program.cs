@@ -27,16 +27,21 @@
         public static int AskForNumber(string text)
         {
             Console.Write(text);
-            while(true)
-            {try {string? userInput = Console.ReadLine(); 
-             int number = Convert.ToInt32(userInput);
-             return number;
+            while (true)
+            {
+                try
+                {
+                    string? userInput = Console.ReadLine();
+                    int number = Convert.ToInt32(userInput);
+                    return number;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("The Error is", e);
+                    Console.WriteLine("Seems there is some error, please enter a number again!");
+                }
             }
-            catch(Exception e){
-                Console.WriteLine("The Error is",e);
-                Console.WriteLine("Seems there is some error, please enter a number again!");
-            }}
-           
+
         }
 
         /// <summary>
