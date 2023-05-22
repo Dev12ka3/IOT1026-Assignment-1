@@ -26,22 +26,23 @@
         /// <returns>The user input as an integer</returns>
         public static int AskForNumber(string text)
         {
+            string? userInput;
             Console.Write(text);
             while (true)
             {
                 try
                 {
-                    string? userInput = Console.ReadLine();
-                    int number = Convert.ToInt32(userInput);
-                    return number;
+                    userInput = Console.ReadLine();
+                    break;
+
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine("The Error is", e);
-                    Console.WriteLine("Seems there is some error, please enter a number again!");
                 }
             }
-
+            int number = Convert.ToInt32(userInput);
+            return number;
         }
 
         /// <summary>
@@ -69,7 +70,7 @@
         static void Main()
         {
             const int Min = 0;
-            const int Max = 10;
+            const int Max = 20;
             const int PrintOffset = 4;
 
             int size = ArrayReplicator.AskForNumber("Enter the array size: ", Min, Max);
